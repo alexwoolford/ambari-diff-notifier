@@ -68,7 +68,7 @@ public class ConfigChangeDetector {
     @Value("${sendgrid.to.name}")
     private String sendgridToName;
 
-    @Scheduled(cron = "*/20 * * * * *")
+    @Scheduled(cron = "0 */5 * * * *") // check every 5 minutes
     void captureChanges() throws URISyntaxException, IOException {
 
         CloseableHttpClient httpclient = HttpClients.createDefault();
